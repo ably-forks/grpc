@@ -43,7 +43,7 @@
 namespace grpc {
 namespace node {
 
-const int max_queue_threads = 2;
+const int max_queue_threads = 12;
 
 using v8::Function;
 using v8::Local;
