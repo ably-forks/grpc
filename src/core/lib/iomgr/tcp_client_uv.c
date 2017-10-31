@@ -74,7 +74,7 @@ static void uv_tc_on_alarm(grpc_exec_ctx *exec_ctx, void *acp,
   grpc_uv_tcp_connect *connect = acp;
   if (GRPC_TRACER_ON(grpc_tcp_trace)) {
     const char *str = grpc_error_string(error);
-    gpr_log(GPR_DEBUG, "CLIENT_CONNECT: %s: on_alarm: error=%s",
+    gpr_log(GPR_INFO, "CLIENT_CONNECT: %s: on_alarm: error=%s",
             connect->addr_name, str);
   }
   if (error == GRPC_ERROR_NONE) {
@@ -157,7 +157,7 @@ static void tcp_client_connect_impl(grpc_exec_ctx *exec_ctx,
   connect->connect_req.data = connect;
 
   if (GRPC_TRACER_ON(grpc_tcp_trace)) {
-    gpr_log(GPR_DEBUG, "CLIENT_CONNECT: %s: asynchronously connecting",
+    gpr_log(GPR_INFO, "CLIENT_CONNECT: %s: asynchronously connecting",
             connect->addr_name);
   }
 
